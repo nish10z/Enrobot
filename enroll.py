@@ -22,25 +22,27 @@ class Test(unittest.TestCase):
             self.base_url + "/shibboleth-ds/?entityID=https%3A%2F%2Fportalsp.acs.ncsu.edu%2Fsp%2Fshibboleth&return=https%3A%2F%2Fportalsp.acs.ncsu.edu%2FShibboleth.sso%2FLogin%3FSAMLDS%3D1%26target%3Dss%253Amem%253Abf2250a2f15cb4f69f9b1553bb986eeaa2feb5cad02051e72e12fdf3b5fc7b6c")
         driver.find_element_by_css_selector("img[alt=\"NCSU Faculty/Staff/Students\"]").click()
         driver.find_element_by_id("j_username").clear()
-        driver.find_element_by_id("j_username").send_keys("sdlfkjsdf")
+        driver.find_element_by_id("j_username").send_keys("cwang25")
         driver.find_element_by_id("j_password").clear()
-        driver.find_element_by_id("j_password").send_keys("fskdjhfskjdfh")
+        driver.find_element_by_id("j_password").send_keys("")
         driver.find_element_by_id("formSubmit").click()
 
-        time.sleep(10)
-        driver.find_element_by_link_text("FOR STUDENTS").click()
+        time.sleep(5)
+        #driver.find_element_by_link_text("FOR STUDENTS").click()
         # ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | _top | 30000]]
-        driver.find_element_by_link_text("Enrollment Wizard").click()
+        #driver.find_element_by_link_text("Enrollment Wizard").click()
         # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | TargetContent | ]]
         # ERROR: Caught exception [ERROR: Unsupported command [selectFrame |  | ]]
-        time.sleep(5)
+        #time.sleep(5)
         driver.get("https://cs9prd.acs.ncsu.edu/psc/CS9PRD/EMPLOYEE/NCSIS/s/WEBLIB_JQUERYUI.ISCRIPT1.FieldFormula.IScript_Enrollment_Wizard")
-        time.sleep(10)
+        #time.sleep(10)
         driver.find_element_by_id("tabs-2-tab").click()
+        #time.sleep(4)
+        driver.find_element_by_id("enrollButton").click()
         # driver.find_element_by_id("tabs-2-tab").click()
         # driver.find_element(By.XPATH, '/html/body/div[3]/div[1]/ul/li[2]/a').click()
         # ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
-        driver.find_element_by_link_text("SIGN OUT").click()
+        #driver.find_element_by_link_text("SIGN OUT").click()
 
     def is_element_present(self, how, what):
         try:
@@ -69,7 +71,7 @@ class Test(unittest.TestCase):
             self.accept_next_alert = True
 
     def tearDown(self):
-        # self.driver.quit()
+        #self.driver.quit()
         self.assertEqual([], self.verificationErrors)
 
 
