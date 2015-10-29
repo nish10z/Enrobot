@@ -28,21 +28,13 @@ class Test(unittest.TestCase):
         driver.find_element_by_id("formSubmit").click()
 
         time.sleep(5)
-        #driver.find_element_by_link_text("FOR STUDENTS").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [waitForPopUp | _top | 30000]]
-        #driver.find_element_by_link_text("Enrollment Wizard").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame | TargetContent | ]]
-        # ERROR: Caught exception [ERROR: Unsupported command [selectFrame |  | ]]
-        #time.sleep(5)
+
         driver.get("https://cs9prd.acs.ncsu.edu/psc/CS9PRD/EMPLOYEE/NCSIS/s/WEBLIB_JQUERYUI.ISCRIPT1.FieldFormula.IScript_Enrollment_Wizard")
         #time.sleep(10)
         driver.find_element_by_id("tabs-2-tab").click()
         #time.sleep(4)
         driver.find_element_by_id("enrollButton").click()
-        # driver.find_element_by_id("tabs-2-tab").click()
-        # driver.find_element(By.XPATH, '/html/body/div[3]/div[1]/ul/li[2]/a').click()
-        # ERROR: Caught exception [ERROR: Unsupported command [selectWindow | null | ]]
-        #driver.find_element_by_link_text("SIGN OUT").click()
+
 
     def is_element_present(self, how, what):
         try:
